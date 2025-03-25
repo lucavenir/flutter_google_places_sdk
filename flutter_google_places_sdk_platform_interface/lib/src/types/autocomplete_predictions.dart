@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'place_type.dart';
+
 part 'autocomplete_predictions.freezed.dart';
 part 'autocomplete_predictions.g.dart';
 
