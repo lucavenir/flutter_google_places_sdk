@@ -10,15 +10,14 @@ class GooglePlacesImg extends StatelessWidget {
   final FetchPlacePhotoResponse placePhotoResponse;
 
   /// Construct a google place img using metadata and response object
-  const GooglePlacesImg(
-      {Key? key, required this.photoMetadata, required this.placePhotoResponse})
+  const GooglePlacesImg({Key? key, required this.photoMetadata, required this.placePhotoResponse})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return placePhotoResponse.maybeWhen(
-      image: (image) => image,
-      orElse: () => Text('Invalid image'),
-    );
+    return switch (placePhotoResponse) {
+      FetchPlacePhotoResponseImage(:final image) => image,
+      _ => Text('Invalid image')
+    };
   }
 }

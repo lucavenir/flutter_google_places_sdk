@@ -113,8 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text(title),
         actions: [
-          new IconButton(
-              onPressed: _openSettingsModal, icon: const Icon(Icons.settings)),
+          new IconButton(onPressed: _openSettingsModal, icon: const Icon(Icons.settings)),
         ],
       ),
       body: Padding(
@@ -163,10 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void _onCountriesTextChanged(String countries) {
     _countries = (countries == "")
         ? []
-        : countries
-            .split(",")
-            .map((item) => item.trim())
-            .toList(growable: false);
+        : countries.split(",").map((item) => item.trim()).toList(growable: false);
   }
 
   void _onPredictTextChanged(String value) {
@@ -191,8 +187,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 
     try {
-      final result = await _places.fetchPlace(_fetchPlaceIdController.text,
-          fields: _placeFields);
+      final result = await _places.fetchPlace(_fetchPlaceIdController.text, fields: _placeFields);
 
       setState(() {
         _place = result.place;
@@ -230,8 +225,7 @@ class _MyHomePageState extends State<MyHomePage> {
         newSessionToken: false,
         origin: LatLng(lat: 43.12, lng: 95.20),
         locationBias: _locationBiasEnabled ? _locationBias : null,
-        locationRestriction:
-            _locationRestrictionEnabled ? _locationRestriction : null,
+        locationRestriction: _locationRestrictionEnabled ? _locationRestriction : null,
       );
 
       setState(() {
@@ -273,9 +267,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // --
       // TextFormField(controller: _fetchPlaceIdController),
       ElevatedButton(
-        onPressed: (_fetchingPlacePhoto == true || _place == null)
-            ? null
-            : _fetchPlacePhoto,
+        onPressed: (_fetchingPlacePhoto == true || _place == null) ? null : _fetchPlacePhoto,
         child: const Text('Fetch Place Photo'),
       ),
 
@@ -337,8 +329,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ];
   }
 
-  Widget _buildEnabledOption(
-      bool value, void Function(bool) callback, Widget child) {
+  Widget _buildEnabledOption(bool value, void Function(bool) callback, Widget child) {
     return Row(
       children: [
         Checkbox(
@@ -376,8 +367,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // -- Place Types
       DropdownButton<PlaceTypeFilter>(
         items: PlaceTypeFilter.values
-            .map((item) => DropdownMenuItem<PlaceTypeFilter>(
-                child: Text(item.value), value: item))
+            .map((item) => DropdownMenuItem<PlaceTypeFilter>(child: Text(item.value), value: item))
             .toList(growable: false),
         value: _placeTypesFilter.isEmpty ? null : _placeTypesFilter[0],
         onChanged: _onPlaceTypeFilterChanged,
@@ -422,9 +412,7 @@ class _MyHomePageState extends State<MyHomePage> {
       _buildErrorWidget(_predictErr),
       Column(
         mainAxisSize: MainAxisSize.min,
-        children: (_predictions ?? [])
-            .map(_buildPredictionItem)
-            .toList(growable: false),
+        children: (_predictions ?? []).map(_buildPredictionItem).toList(growable: false),
       ),
       Image(
         image: FlutterGooglePlacesSdk.ASSET_POWERED_BY_GOOGLE_ON_WHITE,
@@ -437,13 +425,11 @@ class _MyHomePageState extends State<MyHomePage> {
       return Container();
     }
 
-    return gpi.GooglePlacesImg(
-        photoMetadata: _placePhotoMetadata!, placePhotoResponse: placePhoto);
+    return gpi.GooglePlacesImg(photoMetadata: _placePhotoMetadata!, placePhotoResponse: placePhoto);
   }
 
   void _openSettingsModal() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => SettingsPage(_places)));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsPage(_places)));
   }
 }
 
@@ -524,8 +510,7 @@ class _LocationFieldState extends State<LocationField> {
     return Flexible(
       child: TextFormField(
         enabled: widget.enabled,
-        keyboardType:
-            TextInputType.numberWithOptions(signed: true, decimal: true),
+        keyboardType: TextInputType.numberWithOptions(signed: true, decimal: true),
         inputFormatters: [
           FilteringTextInputFormatter.allow(RegExp(r'[\d.]')),
         ],
@@ -542,8 +527,7 @@ class _LocationFieldState extends State<LocationField> {
     final neLat = double.parse(ctrlNELat.value.text);
 
     LatLngBounds bounds = LatLngBounds(
-        southwest: LatLng(lat: 0.0, lng: 0.0),
-        northeast: LatLng(lat: neLat, lng: 0.0));
+        southwest: LatLng(lat: 0.0, lng: 0.0), northeast: LatLng(lat: neLat, lng: 0.0));
 
     widget.onChanged(bounds);
   }
