@@ -12,37 +12,37 @@ dependencies:
     sdk: flutter
   flutter_google_places_sdk_platform_interface:
     git:
-      url: https://github.com/dario91sr/flutter_google_places_sdk.git
+      url: https://github.com/lucavenir/flutter_google_places_sdk.git
       path: flutter_google_places_sdk_platform_interface/
       ref: master
   flutter_google_places_sdk_ios: # ^0.1.6+1
     git:
-      url: https://github.com/dario91sr/flutter_google_places_sdk.git
+      url: https://github.com/lucavenir/flutter_google_places_sdk.git
       path: flutter_google_places_sdk_ios/
       ref: master
   flutter_google_places_sdk_web: # ^0.1.8
     git:
-      url: https://github.com/dario91sr/flutter_google_places_sdk.git
+      url: https://github.com/lucavenir/flutter_google_places_sdk.git
       path: flutter_google_places_sdk_web/
       ref: master
   flutter_google_places_sdk_android: # ^0.2.0-dev.2
     git:
-      url: https://github.com/dario91sr/flutter_google_places_sdk.git
+      url: https://github.com/lucavenir/flutter_google_places_sdk.git
       path: flutter_google_places_sdk_android/
       ref: master
   flutter_google_places_sdk_windows: # ^0.1.4
     git:
-      url: https://github.com/dario91sr/flutter_google_places_sdk.git
+      url: https://github.com/lucavenir/flutter_google_places_sdk.git
       path: flutter_google_places_sdk_windows/
       ref: master
   flutter_google_places_sdk_linux: # ^0.1.4
     git:
-      url: https://github.com/dario91sr/flutter_google_places_sdk.git
+      url: https://github.com/lucavenir/flutter_google_places_sdk.git
       path: flutter_google_places_sdk_linux/
       ref: master
   flutter_google_places_sdk_macos: # ^0.1.4
     git:
-      url: https://github.com/dario91sr/flutter_google_places_sdk.git
+      url: https://github.com/lucavenir/flutter_google_places_sdk.git
       path: flutter_google_places_sdk_macos/
       ref: master
 
